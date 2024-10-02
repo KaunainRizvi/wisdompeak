@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1e90ff, #1c3d5a);
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="flex flex-col items-center justify-center min-h-screen">
+                    <h1 className="text-white text-6xl mb-8">ALL</h1>
+                    <div className="bg-white p-8 rounded-lg shadow-lg w-96 relative">
+                        <h2 className="text-blue-600 text-2xl mb-4 flex items-center justify-center">
+                            Login <i className="fas fa-sign-in-alt ml-2"></i>
+                        </h2>
+                        <div className="relative mb-4">
+                            <input type="text" placeholder="Username" className="w-full p-2 border rounded mb-2" />
+                            <i className="fas fa-user absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                        <div className="relative mb-4">
+                            <input type="password" placeholder="Password" className="w-full p-2 border rounded mb-2" />
+                            <i className="fas fa-key absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                        <button className="w-full bg-blue-600 text-white p-2 rounded mb-2 flex items-center justify-center">
+                            Login <i className="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button className="w-full bg-blue-600 text-white p-2 rounded flex items-center justify-center">
+                            Login with demo ID <i className="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <p className="text-xs text-gray-500 mt-4">
+                            This site is protected by reCAPTCHA and the Google <a href="#" className="text-blue-600">Privacy Policy</a> and <a href="#" className="text-blue-600">Terms of Service</a> apply.
+                        </p>
+                    </div>
+                    <div className="absolute bottom-0 w-full bg-blue-600 text-white text-center p-2">
+                        <div className="flex justify-center space-x-4 mb-2">
+                            <a href="#" className="text-white">Terms and Conditions</a>
+                            <a href="#" className="text-white">Responsible Gaming</a>
+                        </div>
+                        <p>24X7 Support</p>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
