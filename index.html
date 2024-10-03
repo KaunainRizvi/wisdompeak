@@ -1,62 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-body: linear-gradient(to bottom, #0086c9, #244964);
+            --text-body: white;
+        }
         body {
-            background: linear-gradient(to bottom, #1e90ff, #1c3d5a);
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            cursor: default;
+            background: var(--bg-body);
+            color: var(--text-body);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px auto;
+        }
+        .login-box h2 {
+            margin: 0 0 20px;
+            color: #0086c9;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .login-box .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .login-box .input-group input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .login-box .input-group .input-icon {
+            width: 40px;
+            text-align: center;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+        }
+        .login-box .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #0086c9;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .login-box .btn:hover {
+            background: #244964;
+        }
+        .login-box .note {
+            font-size: 12px;
+            color: #666;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .login-box .note a {
+            color: #0086c9;
+            text-decoration: none;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #0088cc;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        function App() {
-            return (
-                <div className="flex flex-col items-center justify-center min-h-screen">
-                    <h1 className="text-white text-6xl mb-8">ALL</h1>
-                    <div className="bg-white p-8 rounded-lg shadow-lg w-96 relative">
-                        <h2 className="text-blue-600 text-2xl mb-4 flex items-center justify-center">
-                            Login <i className="fas fa-sign-in-alt ml-2"></i>
-                        </h2>
-                        <div className="relative mb-4">
-                            <input type="text" placeholder="Username" className="w-full p-2 border rounded mb-2" />
-                            <i className="fas fa-user absolute right-3 top-3 text-gray-400"></i>
-                        </div>
-                        <div className="relative mb-4">
-                            <input type="password" placeholder="Password" className="w-full p-2 border rounded mb-2" />
-                            <i className="fas fa-key absolute right-3 top-3 text-gray-400"></i>
-                        </div>
-                        <button className="w-full bg-blue-600 text-white p-2 rounded mb-2 flex items-center justify-center">
-                            Login <i className="fas fa-arrow-right ml-2"></i>
-                        </button>
-                        <button className="w-full bg-blue-600 text-white p-2 rounded flex items-center justify-center">
-                            Login with demo ID <i className="fas fa-arrow-right ml-2"></i>
-                        </button>
-                        <p className="text-xs text-gray-500 mt-4">
-                            This site is protected by reCAPTCHA and the Google <a href="#" className="text-blue-600">Privacy Policy</a> and <a href="#" className="text-blue-600">Terms of Service</a> apply.
-                        </p>
-                    </div>
-                    <div className="absolute bottom-0 w-full bg-blue-600 text-white text-center p-2">
-                        <div className="flex justify-center space-x-4 mb-2">
-                            <a href="#" className="text-white">Terms and Conditions</a>
-                            <a href="#" className="text-white">Responsible Gaming</a>
-                        </div>
-                        <p>24X7 Support</p>
-                    </div>
+    <div class="container">
+        <img src="https://sitethemedata.com/sitethemes/allpanelexch.com/front/logo.png" alt="Logo" class="logo">
+        <div class="login-box">
+            <h2>Login <i class="fas fa-sign-in-alt"></i></h2>
+            <div class="input-group">
+                <input type="text" placeholder="Username">
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
                 </div>
-            );
-        }
-
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password">
+                <div class="input-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+            </div>
+            <button class="btn">Login <i class="fas fa-arrow-right"></i></button>
+            <button class="btn">Login with demo ID <i class="fas fa-arrow-right"></i></button>
+            <p class="note">This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Responsible Gaming</a>
+        <p>24X7 Support</p>
+    </div>
 </body>
 </html>
